@@ -10,16 +10,18 @@ const divNhap = document.getElementById("nhap");
 const inputNhap = document.getElementById("input-nhap");
 const buttonKiemTra = document.getElementById("btn-kiemtra");
 const submitForm = document.getElementById("submitForm");
+const errorEmail = document.getElementById("err-email");
 
 buttonKiemTra.addEventListener("click", function () {
   const text = inputNhap.value;
   const mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
   if (text.match(mailformat)) {
-    console.log("Email hợp lệ");
+    // console.log("Email hợp lệ");
     divThongTin.style.display = "block";
     divNhap.style.display = "none";
   } else {
-    console.log("Email KHÔNG hợp lệ!");
+    // console.log("Email KHÔNG hợp lệ!");
+    errorEmail.style.display = "block";
   }
 });
 submitForm.addEventListener("click", function (event) {
